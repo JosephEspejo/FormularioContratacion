@@ -1,0 +1,10 @@
+﻿@page "/libro"
+@inject NavigationManager navigationManager
+<h3>Formulario</h3>
+<button @onclick="navegar" class="btn btn-primary">Vizualizar el formulario de Registro</button>
+@code {
+	private void navegar()
+	{
+		navigationManager.NavigateTo("/formContratacion");
+	}
+}

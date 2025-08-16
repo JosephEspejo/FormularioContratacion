@@ -1,0 +1,56 @@
+﻿@page "/formContratacion"
+<h3>Formulario de Registro</h3>
+<EditForm Model="@oLibroFormCLS" OnValidSubmit="@guardar">
+	<DataAnnotationsValidator></DataAnnotationsValidator>
+
+	<div class="mt-3">
+		<label>Num_Empl</label>
+		<InputNumber class="form-control" @bind-Value="oLibroFormCLS.Num_Empl"/>
+		<ValidationMessage For="(() => oLibroFormCLS.Num_Empl)"/>
+	</div>
+	<div class="mt-3">
+		<label>Nombre</label>
+		<InputText class="form-control" @bind-Value="oLibroFormCLS.Nombre"/>
+		<ValidationMessage For="(()=>oLibroFormCLS.Nombre)"/>
+	</div>
+	<div class="mt-3">
+		<label>Edad</label>
+		<InputNumber class="form-control" @bind-Value="oLibroFormCLS.Edad"/>
+		<ValidationMessage For="(() => oLibroFormCLS.Edad)"/>
+	</div>
+	<div class="mt-3">
+		<label>Cargo</label>
+		<InputTextArea class="form-control" @bind-Value="oLibroFormCLS.Cargo"/>
+		<ValidationMessage For="(() => oLibroFormCLS.Cargo)"/>
+	</div>
+	<div class="mt-3">
+		<label>Fecha de Contrato</label>
+		<InputDate class="form-control" @bind-Value="oLibroFormCLS.Fecha_contrato" />
+		<ValidationMessage For="(() => oLibroFormCLS.Fecha_contrato)" />
+	</div>
+	<div class="mt-3">
+		<label>Cuota</label>
+		<InputTextArea class="form-control" @bind-Value="oLibroFormCLS.Cuota"/>
+		<ValidationMessage For="(() => oLibroFormCLS.Cuota)"/>
+	</div>
+	<div class="mt-3">
+		<label>Ventas</label>
+		<InputTextArea class="form-control" @bind-Value="oLibroFormCLS.Ventas"/>
+		<ValidationMessage For="(() => oLibroFormCLS.Ventas)"/>
+	</div>
+	<div class="mt-3">
+		<button type="submit" class="btn btn-success">Guardar</button>
+		<button class="btn btn-danger">Regresar</button>
+	</div>
+</EditForm>
+@code {
+	public LibroFormCLS oLibroFormCLS { get; set; } = new LibroFormCLS
+	{
+		Fecha_contrato = DateTime.Today
+	};
+	private void guardar()
+	{
+		Console.WriteLine("Guardando");
+	}
+
+}
