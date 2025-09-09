@@ -18,7 +18,7 @@ namespace AppBlazorD.Test
         [Fact]
         public void ValidacionCamposVacios()
         {
-            var libro = new LibroFormCLS();
+            var libro = new EmpleadoCLS();
 
             var errores = ValidaModelo(libro);
 
@@ -33,7 +33,7 @@ namespace AppBlazorD.Test
         [Fact]
         public void ValidacionCamposCorrectos()
         {
-            var libro = new LibroFormCLS
+            var libro = new EmpleadoCLS
             {
                 Num_Empl = 1,
                 Nombre = "Juan Perez",
@@ -52,7 +52,7 @@ namespace AppBlazorD.Test
         [Fact]
         public void EdadMenorQue18()
         {
-            var libro = new LibroFormCLS
+            var libro = new EmpleadoCLS
             {
                 Num_Empl = 1,
                 Nombre = "Carlos",
@@ -71,7 +71,7 @@ namespace AppBlazorD.Test
         [Fact]
         public void FechaContratoPosteriorAHoy()
         {
-            var libro = new LibroFormCLS
+            var libro = new EmpleadoCLS
             {
                 Num_Empl = 1,
                 Nombre = "Luis",

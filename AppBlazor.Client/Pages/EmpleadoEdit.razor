@@ -1,0 +1,8 @@
+﻿@page "/formulario-contratacion/{numEmpleado:int}"
+
+<FormularioContratacion numEmpleado="numEmpleado" />
+
+@code {
+    [Parameter]
+    public int numEmpleado { get; set; }
+}

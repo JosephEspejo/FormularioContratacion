@@ -2,10 +2,10 @@
 
 namespace AppBlazor.Entities
 {
-    public class LibroFormCLS
+    public class EmpleadoCLS
     {
         [Required]
-        [Range(1, int.MaxValue, ErrorMessage = "El numero de empleado es obligatorio")]
+        [Range(0, int.MaxValue, ErrorMessage = "El numero de empleado es obligatorio")]
         public int Num_Empl { get; set; }
 
 
@@ -22,7 +22,7 @@ namespace AppBlazor.Entities
 
 
         [Required]
-        [CustomValidation(typeof(LibroFormCLS), nameof(ValidarFechaContrato))]
+        [CustomValidation(typeof(EmpleadoCLS), nameof(ValidarFechaContrato))]
         public DateTime Fecha_contrato { get; set; }
 
 
@@ -34,6 +34,10 @@ namespace AppBlazor.Entities
         [Required(ErrorMessage = "Las ventas son obligatorias")]
         [Range(1, int.MaxValue, ErrorMessage = "Las ventas deben ser un valor numerico")]
         public string Ventas { get; set; } = null!;
+
+        // Nuevos campos
+        public string sucursalEmpleado { get; set; } = string.Empty;
+        public string directorEmpleado { get; set; } = string.Empty;
 
 
 
